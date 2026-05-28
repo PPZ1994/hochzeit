@@ -1,0 +1,766 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Password Overlay Styles */
+.password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.password-container {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.password-container h1 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.password-container p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    border: none;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.password-container input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.password-container button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+}
+
+.password-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.password-container button:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 0.95em;
+    min-height: 20px;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+/* Hidden class for main content */
+.hidden {
+    display: none !important;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(102, 126, 234, 0.6), rgba(118, 75, 162, 0.6)), url('../images/header-photo.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 30px 20px 60px;
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.couple-names {
+    font-size: 4em;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.wedding-date {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.tagline {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+/* Navigation */
+.navigation {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navigation a {
+    color: #667eea;
+    text-decoration: none;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.navigation a:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #667eea;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #667eea;
+    margin: 20px auto 0;
+}
+
+.alt-bg {
+    background: white;
+}
+
+/* Story Section */
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.story-content p {
+    margin-bottom: 20px;
+}
+
+/* Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.detail-card {
+    background: #f9f9f9;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.detail-card p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Timeline */
+.timeline {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item .time {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #667eea;
+    min-width: 150px;
+    margin-right: 20px;
+}
+
+.timeline-item .event {
+    font-size: 1.2em;
+    color: #555;
+    flex: 1;
+}
+
+/* RSVP Section */
+.rsvp-text {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.rsvp-info {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.rsvp-info p {
+    margin: 15px 0;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .placeholder-image {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 2.5em;
+    }
+    
+    .wedding-date {
+        font-size: 1.3em;
+    }
+    
+    .tagline {
+        font-size: 1.1em;
+    }
+    
+    .section h2 {
+        font-size: 2em;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timeline-item .time {
+        margin-bottom: 10px;
+    }
+}
+
+/* Made with Bob */
+
+/* RSVP Form Styles */
+.rsvp-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #667eea;
+    font-size: 1.1em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group select {
+    cursor: pointer;
+    background-color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Georgia', serif;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.rsvp-message {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.success-message {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+}
+
+.error-message {
+    background: #f8d7da;
+    border: 2px solid #dc3545;
+    color: #721c24;
+}
+
+.rsvp-message h3 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.rsvp-message p {
+    font-size: 1.1em;
+}
+
+/* Form Note Styles */
+.form-note {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+    padding-left: 5px;
+    border-left: 3px solid #667eea;
+    padding-left: 12px;
+}
+
+/* Parking Section Styles */
+.parking-text {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.parking-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.parking-card:hover {
+    transform: translateY(-5px);
+}
+
+.parking-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.parking-coords {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #666;
+    font-family: monospace;
+}
+
+.map-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.map-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.parking-map {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Accommodation Section Styles */
+.accommodation-text {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.accommodation-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.accommodation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.accommodation-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.accommodation-distance {
+    font-size: 1.1em;
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.accommodation-type {
+    font-size: 1em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.accommodation-description {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.accommodation-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.accommodation-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.accommodation-note {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.accommodation-note p {
+    font-size: 1.1em;
+    color: #856404;
+    margin: 0;
+}
+
+/* Location Map Styles */
+.location-map {
+    max-width: 900px;
+    margin: 50px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.location-map h3 {
+    font-size: 1.8em;
+}
+
+.location-map iframe {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Invitation Section Styles */
+.invitation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.invitation-content p {
+    margin-bottom: 25px;
+}
+
+.invitation-content .greeting {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 30px;
+}
+
+.invitation-content .closing {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.invitation-content .signature {
+    font-size: 1.3em;
+    font-style: italic;
+    color: #667eea;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* Additional Guest Fields Styles */
+#additional-guests {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #667eea;
+}
+
+.additional-guest-group {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    transition: border-color 0.3s;
+}
+
+.additional-guest-group:hover {
+    border-color: #667eea;
+}
+
+.additional-guest-group h4 {
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    margin-top: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    accent-color: #667eea;
+}
+
+.checkbox-label span {
+    user-select: none;
+}
+
+.checkbox-label:hover span {
+    color: #667eea;
+}

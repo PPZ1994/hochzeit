@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uta & Philipp - Hochzeit 2027</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Password Protection Overlay -->
+    <div id="password-overlay" class="password-overlay">
+        <div class="password-container">
+            <h1>🤍 Willkommen zu unserer Hochzeit 🤍</h1>
+            <p>Bitte gib das Passwort ein, um unseren besonderen Tag zu sehen</p>
+            <input type="password" id="password-input" placeholder="Passwort eingeben" autocomplete="off">
+            <button onclick="checkPassword()">Eintreten</button>
+            <p id="error-message" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Main Wedding Content (Hidden until password is correct) -->
+    <div id="wedding-content" class="wedding-content hidden">
+        <!-- Header -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="couple-names">Uta & Philipp</h1>
+                <p class="wedding-date">Samstag, 19. Juni 2027</p>
+                <p class="tagline">Nach dem Standesamt ist vor der Hochzeitsfeier</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="#invitation">Einladung</a>
+            <a href="#details">Details</a>
+            <a href="#schedule">Zeitplan</a>
+            <a href="#parking">Parkplatz</a>
+            <a href="#accommodation">Unterkunft</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+
+        <!-- Invitation Section -->
+        <section id="invitation" class="section">
+            <div class="container">
+                <h2>Einladung</h2>
+                <div class="invitation-content">
+                    <p class="greeting">Liebe Familie & Freunde,</p>
+                    <p>nach unserer wunderschönen Bayrischen standesamtlichen Hochzeit am 05.12.2025 möchten wir die versprochene Party nachholen. Wir laden euch herzlich zu unserer freien Trauung mit anschließendem Umtrunk am 19.06.2027 in die Oberpfalz ein. In gemütlicher Atmosphäre gibt es Essen & Getränke im Garten mit Zelt.</p>
+                    <p class="closing">Wir freuen uns über euer Kommen!</p>
+                    <p class="signature">Uta, Coco & Philipp Zillmann</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Details Section -->
+        <section id="details" class="section alt-bg">
+            <div class="container">
+                <h2>Hochzeitsdetails</h2>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>📍 Trauung</h3>
+                        <p><strong>Ort:</strong> Amberger Straße 7</p>
+                        <p>92245 Kümmersbruck</p>
+                        <p><strong>Zeit:</strong> 15:00 Uhr</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>🎉 Feier</h3>
+                        <p><strong>Ort:</strong> Amberger Straße 7</p>
+                        <p>92245 Kümmersbruck</p>
+                        <p><strong>Zeit:</strong> Ab 20:00 Uhr</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>👔 Dresscode</h3>
+                        <p>Festliche Kleidung</p>
+                        <p>Bitte keine weiße Kleidung</p>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: #667eea;">📍 Anfahrt zur Location</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.5!2d11.882669!3d49.423250!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDI1JzIzLjciTiAxMcKwNTInNTcuNiJF!5e0!3m2!1sde!2sde!4v1234567890"
+                        width="100%"
+                        height="450"
+                        style="border:0; border-radius: 15px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Amberger+Straße+7,+92245+Kümmersbruck" target="_blank" class="map-button">
+                            In Google Maps öffnen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2>Zeitplan</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">Ab 14:00 Uhr</div>
+                        <div class="event">Ankunft und Sprizz Getränke</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">15:00 Uhr</div>
+                        <div class="event">Trauung und Fotos</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">16:00 Uhr</div>
+                        <div class="event">Kaffee und Kuchen (Hochzeitskuchen von Alexander Heiner Jung)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">18:00 Uhr</div>
+                        <div class="event">Abendessen</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">20:00 Uhr</div>
+                        <div class="event">Tanzen & Feiern</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parking Section -->
+        <section id="parking" class="section alt-bg">
+            <div class="container">
+                <h2>🅿️ Parkplatz</h2>
+                <p class="parking-text">Hier findet ihr Parkmöglichkeiten in der Nähe:</p>
+                
+                <div class="parking-grid">
+                    <div class="parking-card">
+                        <h3>Parkplatz 1</h3>
+                        <p class="parking-coords">📍 49.423250, 11.882669</p>
+                        <a href="https://www.google.com/maps?q=49.423250,11.882669" target="_blank" class="map-button">
+                            In Google Maps öffnen
+                        </a>
+                    </div>
+                    
+                    <div class="parking-card">
+                        <h3>Parkplatz 2</h3>
+                        <p class="parking-coords">📍 49.423286, 11.885155</p>
+                        <a href="https://www.google.com/maps?q=49.423286,11.885155" target="_blank" class="map-button">
+                            In Google Maps öffnen
+                        </a>
+                    </div>
+                    
+                    <div class="parking-card">
+                        <h3>Parkplatz 3</h3>
+                        <p class="parking-coords">📍 49.421142, 11.882943</p>
+                        <a href="https://www.google.com/maps?q=49.421142,11.882943" target="_blank" class="map-button">
+                            In Google Maps öffnen
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="parking-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=49.423250,11.882669&zoom=17"
+                        width="100%"
+                        height="450"
+                        style="border:0; border-radius: 15px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <p style="color: #667eea; font-weight: bold; margin-bottom: 10px;">🅿️ Parkplatz 1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accommodation Section -->
+        <section id="accommodation" class="section">
+            <div class="container">
+                <h2>🏨 Unterkunft</h2>
+                <p class="accommodation-text">Hier findet ihr Übernachtungsmöglichkeiten in der Nähe:</p>
+                
+                <div class="accommodation-grid">
+                    <div class="accommodation-card">
+                        <h3>Zur Post</h3>
+                        <p class="accommodation-distance">🚶 14 Minuten zu Fuß</p>
+                        <p class="accommodation-type">Hotel & Tiny House</p>
+                        <p class="accommodation-description">Moderne Unterkunft mit verschiedenen Optionen direkt in der Nähe.</p>
+                        <a href="https://www.hzpk.de/" target="_blank" class="accommodation-button">
+                            Zur Website
+                        </a>
+                    </div>
+                    
+                    <div class="accommodation-card">
+                        <h3>Drahthammerschlössl</h3>
+                        <p class="accommodation-distance">🚶 19 Minuten zu Fuß</p>
+                        <p class="accommodation-type">Hotel</p>
+                        <p class="accommodation-description">Charmantes Hotel mit gemütlicher Atmosphäre.</p>
+                        <a href="https://www.drahthammerschloessl.de/" target="_blank" class="accommodation-button">
+                            Zur Website
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="accommodation-note">
+                    <p>💡 <strong>Tipp:</strong> Wir empfehlen, frühzeitig zu buchen, um euch eure Wunschunterkunft zu sichern!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section id="rsvp" class="section alt-bg">
+            <div class="container">
+                <h2>RSVP</h2>
+                <p class="rsvp-text">Bitte gebt uns bis zum 31. Januar 2027 Bescheid</p>
+                
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="first-name">Vorname *</label>
+                        <input type="text" id="first-name" name="first-name" required placeholder="Vorname">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="last-name">Nachname *</label>
+                        <input type="text" id="last-name" name="last-name" required placeholder="Nachname">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guest-email">Email *</label>
+                        <input type="email" id="guest-email" name="guest-email" required placeholder="deine@email.de">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guest-phone">Telefon</label>
+                        <input type="tel" id="guest-phone" name="guest-phone" placeholder="Optional">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendance">Zusage *</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="yes">✅ Ja, ich komme gerne!</option>
+                            <option value="no">❌ Leider kann ich nicht kommen</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guest-count">Anzahl Personen Insgesamt *</label>
+                        <select id="guest-count" name="guest-count" required>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 Personen</option>
+                            <option value="3">3 Personen</option>
+                        </select>
+                        <p class="form-note">* Falls mehr als 3 Personen mitkommen, gebt uns bitte kurz per Nachricht Bescheid.</p>
+                    </div>
+                    
+                    <div id="additional-guests" style="display: none;">
+                        <!-- Additional guest fields will be inserted here dynamically -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dietary">Besondere Ernährungswünsche</label>
+                        <textarea id="dietary" name="dietary" rows="3" placeholder="z.B. vegetarisch, vegan, Allergien..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">RSVP Absenden</button>
+                </form>
+                
+                <div id="rsvp-success" class="rsvp-message success-message" style="display: none;">
+                    <h3>✅ Vielen Dank!</h3>
+                    <p>Deine Rückmeldung wurde erfolgreich gespeichert.</p>
+                </div>
+                
+                <div id="rsvp-error" class="rsvp-message error-message" style="display: none;">
+                    <h3>❌ Fehler</h3>
+                    <p>Es gab ein Problem beim Absenden. Bitte versuche es erneut oder kontaktiere uns direkt.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Wir freuen uns darauf, mit euch zu feiern! 💕</p>
+            <p>&copy; 2027 Uta & Philipp</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
