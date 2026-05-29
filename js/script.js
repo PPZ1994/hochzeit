@@ -307,3 +307,121 @@ function exportRSVPsAsCSV() {
 // Make functions available in console for the couple to use
 window.viewAllRSVPs = viewAllRSVPs;
 window.exportRSVPsAsCSV = exportRSVPsAsCSV;
+
+// Add to Calendar Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Wedding event details
+    const eventDetails = {
+        title: 'Hochzeit Uta & Philipp',
+        description: 'Freie Trauung mit anschließendem Umtrunk, Essen & Getränke im Garten mit Zelt',
+        location: 'Amberger Straße 7, 92245 Kümmersbruck',
+        startDate: '2027-06-19T14:00:00',
+        endDate: '2027-06-20T02:00:00'
+    };
+    
+    // Format dates for different calendar systems
+    function formatDateForICS(dateString) {
+        return dateString.replace(/[-:]/g, '').split('.')[0] + 'Z';
+    }
+    
+    function formatDateForGoogle(dateString) {
+        return dateString.replace(/[-:]/g, '').split('.')[0] + 'Z';
+    }
+    
+    // Generate ICS file content (for Apple Calendar and Outlook)
+    function generateICS() {
+        const startDate = formatDateForICS(eventDetails.startDate);
+        const endDate = formatDateForICS(eventDetails.endDate);
+        
+        const icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Hochzeit Uta & Philipp//DE',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            `DTSTART:${startDate}`,
+            `DTEND:${endDate}`,
+            `SUMMARY:${eventDetails.title}`,
+            `DESCRIPTION:${eventDetails.description}`,
+            `LOCATION:${eventDetails.location}`,
+            'STATUS:CONFIRMED',
+            'SEQUENCE:0',
+            `UID:${Date.now()}@hochzeit-uta-philipp.de`,
+            'BEGIN:VALARM',
+            'TRIGGER:-P1D',
+            'ACTION:DISPLAY',
+            'DESCRIPTION:Erinnerung: Hochzeit Uta & Philipp morgen!',
+            'END:VALARM',
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ].join('\r\n');
+        
+        return icsContent;
+    }
+    
+    // Apple Calendar (iOS/macOS)
+    const appleCalendarBtn = document.getElementById('apple-calendar');
+    if (appleCalendarBtn) {
+        appleCalendarBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const icsContent = generateICS();
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'hochzeit-uta-philipp.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+    
+    // Google Calendar
+    const googleCalendarBtn = document.getElementById('google-calendar');
+    if (googleCalendarBtn) {
+        const startDate = formatDateForGoogle(eventDetails.startDate);
+        const endDate = formatDateForGoogle(eventDetails.endDate);
+        
+        const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE` +
+            `&text=${encodeURIComponent(eventDetails.title)}` +
+            `&dates=${startDate}/${endDate}` +
+            `&details=${encodeURIComponent(eventDetails.description)}` +
+            `&location=${encodeURIComponent(eventDetails.location)}` +
+            `&sf=true&output=xml`;
+        
+        googleCalendarBtn.href = googleUrl;
+    }
+    
+    // Outlook Calendar
+    const outlookCalendarBtn = document.getElementById('outlook-calendar');
+    if (outlookCalendarBtn) {
+        const startDate = eventDetails.startDate;
+        const endDate = eventDetails.endDate;
+        
+        const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?` +
+            `subject=${encodeURIComponent(eventDetails.title)}` +
+            `&body=${encodeURIComponent(eventDetails.description)}` +
+            `&location=${encodeURIComponent(eventDetails.location)}` +
+            `&startdt=${startDate}` +
+            `&enddt=${endDate}` +
+            `&path=/calendar/action/compose&rru=addevent`;
+        
+        outlookCalendarBtn.href = outlookUrl;
+    }
+    
+    // Android Calendar (uses ICS file like Apple)
+    const androidCalendarBtn = document.getElementById('android-calendar');
+    if (androidCalendarBtn) {
+        androidCalendarBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const icsContent = generateICS();
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'hochzeit-uta-philipp.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+});

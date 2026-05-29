@@ -766,3 +766,97 @@ body {
 .checkbox-label:hover span {
     color: #667eea;
 }
+
+/* Calendar Section Styles */
+.calendar-section {
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.calendar-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    min-height: 120px;
+}
+
+.calendar-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.calendar-text {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.apple-btn {
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
+    color: white;
+}
+
+.apple-btn:hover {
+    background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+}
+
+.google-btn {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+}
+
+.google-btn:hover {
+    background: linear-gradient(135deg, #5294f5 0%, #45b864 100%);
+}
+
+.outlook-btn {
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+    color: white;
+}
+
+.outlook-btn:hover {
+    background: linear-gradient(135deg, #1088e4 0%, #207ece 100%);
+}
+
+.android-btn {
+    background: linear-gradient(135deg, #3ddc84 0%, #07c160 100%);
+    color: white;
+}
+
+.android-btn:hover {
+    background: linear-gradient(135deg, #4dec94 0%, #17d170 100%);
+}
+
+@media (max-width: 768px) {
+    .calendar-buttons {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    
+    .calendar-section {
+        padding: 30px 15px;
+    }
+}
